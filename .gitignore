@@ -1,4 +1,3 @@
-09_ci_cd_github_actions/
 # Terraform Files
 .terraform/
 *.tfstate
