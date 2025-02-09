@@ -1,5 +1,5 @@
 module "web_app" {
-  source         = "./modules/web-app"
+  source         = "../modules/web-app"
   instance_count = var.instance_count
   instance_type  = var.instance_type
   ami_id         = var.ami_id
