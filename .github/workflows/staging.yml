@@ -21,7 +21,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: ./09_ci_cd_github_actions/staging
-      
+
       - name: Terraform Validate
         run: terraform validate
         working-directory: ./09_ci_cd_github_actions/staging
@@ -29,7 +29,15 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
         working-directory: ./09_ci_cd_github_actions/staging
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
         working-directory: ./09_ci_cd_github_actions/staging
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
