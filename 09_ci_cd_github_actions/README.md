@@ -1,0 +1,1 @@
+To test the code run ".\test.ps1" on powershell within the same directory
