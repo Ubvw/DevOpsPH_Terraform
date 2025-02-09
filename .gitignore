@@ -1,1 +1,7 @@
 09_ci_cd_github_actions/
+# Terraform Files
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.exe
+*.lock.hcl
